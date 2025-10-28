@@ -1,6 +1,6 @@
 # Projeto: Site - Aliança Câmbio e Ouro
 
-[![Preview do site](./preview.jpg)](https://Marcus-V-Couto.github.io/alianca-cambio-e-ouro/)
+[![Preview do site](/preview.jpg)](https://Marcus-V-Couto.github.io/alianca-cambio-e-ouro/)
 
 Este repositório exibe apenas o projeto do site desenvolvido para fins de portfólio.  
 Todos os direitos de imagem, marca e conteúdo pertencem à Empresa Aliança Câmbio e Ouro.  
