@@ -1,0 +1,16 @@
+:root{
+    --max-width-size: 19.2rem;
+    --max-header-height: 15.5rem;
+    --primary-color: #FF2C00;
+    --secondary-color: #901800;
+    --terciary-color:#007085;
+    --accent-color: #00D4FF;
+    --text-color: #000000;
+    --light-gray: #E7E7E7;
+    --light-gray-transparent: rgba(231, 231, 231, 0.8);
+    --gray-color: #B6B6B6;
+    --border-color: #E7E7E7;
+    --white-color: #FFFFFF;
+    --white-transparent-color: rgba(255, 255, 255, 0.8);
+    --hover-btn: rgba(255, 0, 0, 0.75);
+}

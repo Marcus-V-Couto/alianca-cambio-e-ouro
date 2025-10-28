@@ -1,0 +1,1163 @@
+/* ROOT */
+
+html {
+    scroll-behavior: smooth;
+    font-size: 62.5%;
+}
+
+body {
+    display: grid;
+    grid-template-areas: 
+        "header header header header"
+        "s1 s1 s1 s1"
+        "s2 s2 s2 s2"
+        "s3 s3 s3 s3"
+        "s4 s4 s4 s4"
+        "s5 s5 s5 s5"
+        "footer footer footer footer"
+    ;
+    grid-template-columns: repeat(1, 1fr);
+    font-size: 1.6rem;
+    font-family: "Roboto", sans-serif;
+    font-weight: 400;
+    color: var(--text-color);
+    line-height: 1.6;
+}
+
+/* HEADER */
+
+.header {
+    grid-area: header;
+    background-color: var(--light-gray);
+    position: fixed;
+    width: 100%;
+    max-height: var(--max-header-height);
+    z-index: 999;
+}
+
+.header .header-container {
+    display: flex;
+    padding: 2.5rem 20rem;
+    justify-content: space-between;
+    align-items: center;
+    min-height: 7.5rem;
+}
+
+.header .header-container a .logo {
+    display: flex;
+    align-items: center;
+    margin-left: 0;
+    transition: all 0.3s ease-in-out;
+}
+
+.header .header-container a .logo:hover {
+    transform: scale(1.1);
+}
+
+.header .header-container input {
+    display: none;
+}
+
+.header .header-container .header-menu {
+    display: flex;
+    align-items: center;
+}
+
+.header .header-container .header-menu ul {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    gap: 1rem;
+    margin: 0;
+    padding: 0;
+}
+
+.header .header-container .header-menu ul li a {
+    font-size: 2rem;
+    font-weight: 600;
+    padding: 1rem 3rem;
+    border-radius: 5rem;
+}
+
+.header .header-container .header-menu ul li:last-child {
+    margin-right: 0;
+}
+
+.header .header-container .header-menu ul .institucional,
+.header .header-container .header-menu ul .faq,
+.header .header-container .header-menu ul .contato {
+    visibility: hidden;
+    display: none;
+}
+
+.header .header-container .header-menu ul li a:hover {
+    color: var(--white-color);
+    background-color: var(--hover-btn);
+    transition: all 0.3s ease;
+}
+
+.container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    padding-top: var(--max-header-height);
+}
+
+.container .encontre {
+    position: relative;
+    text-align: center;
+    font-size: 4rem;
+    font-weight: 700;
+    margin: 0.5rem 0;
+}
+
+/* Ouro */
+
+.main-s2 .ouro,
+.produtos-s1 .ouro {
+    width: 100%;
+    max-width: 176rem;
+    background-color: var(--light-gray-transparent);
+    padding: 0.5rem 3.2rem;
+    margin: 0 auto;
+    z-index: 2;
+}
+
+.main-s2 .ouro .ouro-titulo,
+.produtos-s1 .ouro .ouro-titulo {
+    font-size: 3rem;
+    font-weight: 700;
+    margin: 1rem 0 2rem 0;
+    z-index: 2;
+}
+
+.main-s2 .ouro .ouro-lista,
+.produtos-s1 .ouro .ouro-lista {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+    gap: 2rem;
+    z-index: 2;
+}
+
+.main-s2 .ouro .ouro-lista .ouro-produto .produto-cartao,
+.produtos-s1 .ouro .ouro-lista .ouro-produto .produto-cartao {
+    background-color: var(--white-color);
+    border-radius: 1.6rem;
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px, rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;
+    cursor: pointer;
+    transition: 0.3s;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+}
+
+.main-s2 .ouro .ouro-lista .ouro-produto .produto-cartao:hover,
+.produtos-s1 .ouro .ouro-lista .ouro-produto .produto-cartao:hover {
+    box-shadow: rgba(17, 12, 46, 0.15) 0px 48px 100px 0px;
+    transform: translateY(-16px)
+}
+
+.main-s2 .ouro .ouro-lista .ouro-produto .produto-cartao .produto-img-container,
+.produtos-s1 .ouro .ouro-lista .ouro-produto .produto-cartao .produto-img-container {
+    height: 18rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 1rem;
+    background-color: #f9f9f9;
+}
+
+.main-s2 .ouro .ouro-lista .ouro-produto .produto-cartao .produto-img,
+.produtos-s1 .ouro .ouro-lista .ouro-produto .produto-cartao .produto-img {
+    max-width: 100%;
+    max-height: 100%;
+    width: auto;
+    height: auto;
+    object-fit: contain;
+}
+
+.main-s2 .ouro .ouro-lista .ouro-produto .produto-cartao .produto-info,
+.produtos-s1 .ouro .ouro-lista .ouro-produto .produto-cartao .produto-info {
+    padding: 1.6rem;
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+.main-s2 .ouro .ouro-lista .ouro-produto .produto-cartao .produto-info .produto-nome,
+.produtos-s1 .ouro .ouro-lista .ouro-produto .produto-cartao .produto-info .produto-nome {
+    font-size: 1.6rem;
+    font-weight: 700;
+    margin-bottom: 0.6rem;
+}
+
+.main-s2 .ouro .ouro-lista .ouro-produto .produto-cartao .produto-info .produto-descricao,
+.produtos-s1 .ouro .ouro-lista .ouro-produto .produto-cartao .produto-info .produto-descricao {
+    font-size: 1.3rem;
+    margin-bottom: 1.2rem;
+    flex-grow: 1;
+}
+
+.main-s2 .ouro .ouro-lista .ouro-produto .produto-cartao .produto-img.size-small,
+.produtos-s1 .ouro .ouro-lista .ouro-produto .produto-cartao .produto-img.size-small {
+    transform: scale(0.5);
+}
+
+.main-s2 .ouro .ouro-lista .ouro-produto .produto-cartao .produto-img.size-medium,
+.produtos-s1 .ouro .ouro-lista .ouro-produto .produto-cartao .produto-img.size-medium {
+    transform: scale(0.75);
+}
+
+.main-s2 .ouro .ouro-lista .ouro-produto .produto-cartao .produto-img.size-large,
+.produtos-s1 .ouro .ouro-lista .ouro-produto .produto-cartao .produto-img.size-large {
+    transform: scale(1);
+}
+
+.main-s2 .ouro .ouro-disponivel,
+.produtos-s1 .ouro .ouro-disponivel {
+    font-size: 1.6rem;
+    font-weight: 600;
+    margin-top: 2rem;
+}
+
+/* Ouro Fino */
+
+.main-s3 .ouro-fino,
+.servicos-s1 .ouro-fino {
+    display: flex;
+    position: relative;
+    background-color: var(--light-gray-transparent);
+    width: 100%;
+    max-width: 125rem;
+    margin: 5rem auto;
+    border-radius: 2.5rem;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    z-index: 2;
+    padding: 6rem 4rem;
+}
+
+.main-s3 .ouro-fino .ouro-fino-titulo,
+.servicos-s1 .ouro-fino .ouro-fino-titulo {
+    font-size: 3rem;
+    font-weight: 700;
+    margin: 1rem 0 2rem 0;
+}
+
+.main-s3 .ouro-fino .ouro-fino-descricao,
+.servicos-s1 .ouro-fino .ouro-fino-descricao {
+    font-size: 1.6rem;
+    font-weight: 600;
+    margin: 2rem 5rem;
+    text-align: center;
+}
+
+/* Moedas Estrangeiras */
+
+.main-s4 .moedas-estrangeiras,
+.produtos-s2 .moedas-estrangeiras {
+    display: flex;
+    position: relative;
+    background-color: var(--light-gray-transparent);
+    width: 100%;
+    max-width: 100rem;
+    margin: 5rem auto;
+    border-radius: 2.5rem;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    z-index: 2;
+    padding: 6rem 4rem;
+}
+
+.main-s4 .moedas-estrangeiras .moedas-estrangeiras-titulo,
+.produtos-s2 .moedas-estrangeiras .moedas-estrangeiras-titulo {
+    font-size: 3rem;
+    font-weight: 700;
+    margin: 1rem 0 2rem 0;
+}
+
+.main-s4 .moedas-estrangeiras .moedas-estrangeiras-descricao,
+.produtos-s2 .moedas-estrangeiras .moedas-estrangeiras-descricao {
+    font-size: 1.6rem;
+    font-weight: 600;
+    margin: 0 5rem 2rem 5rem;
+    text-align: center;
+}
+
+.main-s4 .moedas-estrangeiras .moedas-estrangeiras-lista,
+.produtos-s2 .moedas-estrangeiras .moedas-estrangeiras-lista {
+    display: flex;
+    width: 50%;
+    height: auto;
+    flex-wrap: wrap;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    list-style: none;
+    padding: 0;
+    margin: 2rem 0;
+    gap: 2rem;
+}
+
+.main-s4 .moedas-estrangeiras .moedas-estrangeiras-lista li,
+.produtos-s2 .moedas-estrangeiras .moedas-estrangeiras-lista li {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 10rem;
+    height: 12.5rem;
+    background-color: var(--white-color);
+    border-radius: 8px;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+    box-sizing: border-box;
+    cursor: pointer;
+    padding: 1rem;
+    text-align: center;
+    transition: transform 0.3s, box-shadow 0.3s;
+    font-weight: 600;
+}
+
+.main-s4 .moedas-estrangeiras .moedas-estrangeiras-lista li:hover,
+.produtos-s2 .moedas-estrangeiras .moedas-estrangeiras-lista li:hover {
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    transform: translateY(-5px);
+}
+
+.main-s4 .moedas-estrangeiras .moedas-estrangeiras-lista li .flag-hex-shadow,
+.produtos-s2 .moedas-estrangeiras .moedas-estrangeiras-lista li .flag-hex-shadow {
+    display: inline-block;
+    width: 3em;
+    height: 3em;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+    border-radius: 100%;
+}
+
+.main-s4 .moedas-estrangeiras .moedas-estrangeiras-lista li .flag-hex-shadow .flag-hex,
+.produtos-s2 .moedas-estrangeiras .moedas-estrangeiras-lista li .flag-hex-shadow .flag-hex {
+    display: inline-block;
+    width: 100%;
+    height: 100%;
+    clip-path: polygon(
+        25% 6.7%, 75% 6.7%,
+        100% 50%, 75% 93.3%,
+        25% 93.3%, 0% 50%
+    );
+    transform: rotate(30deg);
+    overflow: hidden;
+    position: relative;
+    z-index: 1;
+}
+
+.main-s4 .moedas-estrangeiras .moedas-estrangeiras-lista li .flag-hex-shadow::before,
+.produtos-s2 .moedas-estrangeiras .moedas-estrangeiras-lista li .flag-hex-shadow::before {
+    content: "";
+    position: absolute;
+    top: -0.8rem; left: -0.8rem; right: -0.8rem; bottom: -0.8rem;
+    z-index: 0;
+    clip-path: polygon(
+        25% 13.4%, 75% 13.4%,
+        100% 50%, 75% 86.6%,
+        25% 86.6%, 0% 50%
+    );
+    box-shadow: 0 2px 12px 4px rgba(0,0,0,0.25);
+    background: transparent;
+    pointer-events: none;
+}
+
+.main-s4 .moedas-estrangeiras .moedas-estrangeiras-lista li .flag-hex-shadow .flag-hex .fi.fis,
+.produtos-s2 .moedas-estrangeiras .moedas-estrangeiras-lista li .flag-hex-shadow .flag-hex .fi.fis {
+    display: block;
+    position: static;
+    width: 100%;
+    height: 100%;
+    background-color: #eee;
+    background-size: cover;
+    background-position: center center;
+    transform: rotate(-30deg);
+    object-fit: cover;
+}
+
+.main-s4 .moedas-estrangeiras .moedas-estrangeiras-disponivel,
+.produtos-s2 .moedas-estrangeiras .moedas-estrangeiras-disponivel {
+    font-size: 1.6rem;
+    font-weight: 600;
+    margin-top: 2rem;
+}
+
+/* Remessas - Moneygram */
+
+.servicos-s2 .remessas {
+    display: flex;
+    position: relative;
+    background-color: var(--light-gray-transparent);
+    width: 100%;
+    max-width: 75rem;
+    height: auto;
+    margin: 5rem auto;
+    border-radius: 2.5rem;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    z-index: 2;
+}
+
+.servicos-s2 .remessas .remessas-titulo {
+    font-size: 3rem;
+    font-weight: 700;
+    margin: 1rem 0 2rem 0;
+}
+
+.servicos-s2 .remessas .moneygram-titulo {
+    font-size: 3rem;
+    font-weight: 700;
+    margin: 1rem 0 2rem 0;
+}
+
+.servicos-s2 .remessas img {
+    width: 75%;
+    height: auto;
+    margin-bottom: 2rem;
+}
+
+.servicos-s2 .remessas .moneygram-descricao {
+    font-size: 1.6rem;
+    font-weight: 600;
+    margin: 0 5rem 2rem 5rem;
+    text-align: center;
+}
+
+/* Cartões VTM (Visa Travel Money) */
+
+.produtos-s3 .vtm {
+    display: flex;
+    position: relative;
+    background-color: var(--light-gray-transparent);
+    width: 100%;
+    max-width: 75rem;
+    height: auto;
+    margin: 5rem auto;
+    border-radius: 2.5rem;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    z-index: 2;
+    padding: 6rem 4rem;
+}
+
+.produtos-s3 .vtm .vtm-titulo {
+    font-size: 3rem;
+    font-weight: 700;
+    margin: 1rem 0 2rem 0;
+}
+
+.produtos-s3 .vtm .vtm-img {
+    width: 20rem;
+    height: auto;
+    margin-bottom: 2rem;
+}
+
+.produtos-s3 .vtm .vtm-descricao {
+    font-size: 1.6rem;
+    font-weight: 600;
+    margin: 0 5rem 2rem 5rem;
+    text-align: center;
+}
+
+.produtos-s3 .vtm .vtm-lista {
+    display: flex;
+    width: 95%;
+    height: auto;
+    flex-wrap: wrap;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    list-style: none;
+    padding: 0;
+    margin: 2rem 0;
+    gap: 2rem;
+}
+
+.produtos-s3 .vtm .vtm-lista li {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 10rem;
+    height: 12.5rem;
+    background-color: var(--white-color);
+    border-radius: 0.8rem;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+    box-sizing: border-box;
+    cursor: pointer;
+    padding: 1rem;
+    text-align: center;
+    transition: transform 0.3s, box-shadow 0.3s;
+    font-weight: 600;
+}
+
+.produtos-s3 .vtm .vtm-lista li:hover {
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    transform: translateY(-5px);
+}
+
+.produtos-s3 .vtm .vtm-lista li .flag-hex-shadow {
+    display: inline-block;
+    width: 3em;
+    height: 3em;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+    border-radius: 100%;
+}
+
+.produtos-s3 .vtm .vtm-lista li .flag-hex-shadow .flag-hex {
+    display: inline-block;
+    width: 100%;
+    height: 100%;
+    clip-path: polygon(
+        25% 6.7%, 75% 6.7%,
+        100% 50%, 75% 93.3%,
+        25% 93.3%, 0% 50%
+    );
+    transform: rotate(30deg);
+    overflow: hidden;
+    position: relative;
+    z-index: 1;
+}
+
+.produtos-s3 .vtm .vtm-lista li .flag-hex-shadow::before {
+    content: "";
+    position: absolute;
+    top: -0.8rem; left: -0.8rem; right: -0.8rem; bottom: -0.8rem;
+    z-index: 0;
+    clip-path: polygon(
+        25% 13.4%, 75% 13.4%,
+        100% 50%, 75% 86.6%,
+        25% 86.6%, 0% 50%
+    );
+    box-shadow: 0 2px 12px 4px rgba(0,0,0,0.25);
+    background: transparent;
+    pointer-events: none;
+}
+
+.produtos-s3 .vtm .vtm-lista li .flag-hex-shadow .flag-hex .fi.fis {
+    display: block;
+    position: static;
+    width: 100%;
+    height: 100%;
+    background-color: #eee;
+    background-size: cover;
+    background-position: center center;
+    transform: rotate(-30deg);
+    object-fit: cover;
+}
+
+.produtos-s3 .vtm .vtm-disponivel {
+    font-size: 1.6rem;
+    font-weight: 600;
+    margin-top: 2rem;
+}
+
+/* Seguro-Viagem */
+
+.servicos-s3 .seguro-viagem {
+    display: flex;
+    position: relative;
+    background-color: var(--light-gray-transparent);
+    width: 100%;
+    max-width: 75rem;
+    height: auto;
+    margin: 5rem auto;
+    border-radius: 2.5rem;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    z-index: 2;
+    padding: 6rem 4rem;
+}
+
+.servicos-s3 .seguro-viagem .seguro-viagem-titulo {
+    font-size: 3rem;
+    font-weight: 700;
+    margin: 1rem 0 2rem 0;
+}
+
+.servicos-s3 .seguro-viagem .seguro-viagem-img {
+    width: auto;
+    height: auto;
+    margin-bottom: 2rem;
+}
+
+.servicos-s3 .seguro-viagem .seguro-viagem-descricao {
+    font-size: 1.6rem;
+    font-weight: 600;
+    margin: 0 5rem 2rem 5rem;
+    text-align: center;
+}
+
+/* SECTION 1 */
+
+#s1 {
+    grid-area: s1;
+    position: relative;
+    background-color: none;
+    min-height: calc(100vh - var(--max-header-height));
+    width: 100%;
+    margin: auto;
+    text-align: center;
+    box-sizing: border-box;
+}
+
+.main-s1 {
+    background: url(../img/main-banner-resized.png) no-repeat center center;
+    background-size: cover;
+    min-height: calc(100vh - var(--max-header-height));
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    position: relative;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.main-s1 .intro {
+    display: flex;
+    position: relative;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    z-index: 2;
+}
+
+.main-s1 .intro .bemvindo,
+.main-s1 .intro .bemvindo-intro {
+    color: var(--white-color);
+    text-shadow: 0 2px 8px rgba(0,0,0,0.5);
+    margin: 1rem 0;
+    padding: 0 2rem;
+    background: rgba(0,0,0,0.2);
+    border-radius: 0.8rem;
+}
+
+.main-s1 .intro .bemvindo {
+    font-size: 4rem;
+    font-weight: 700;
+}
+
+.main-s1 .intro .bemvindo-intro {
+    font-size: 2rem;
+    font-weight: 500;
+}
+
+.main-s1 .intro .selecao-btn {
+    display: flex;
+    position: relative;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    gap: 5rem;
+    margin: 5rem 0;
+    z-index: 2;
+}
+
+.main-s1 .intro .selecao-btn button,
+.main-s3 .ouro-fino button,
+.servicos-s1 .ouro-fino button,
+.servicos-s3 .seguro-viagem button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 30rem;
+    background-color: var(--accent-color);
+    color: var(--white-color);
+    border: none;
+    padding: 2rem 10rem;
+    cursor: pointer;
+    font-size: 2.4rem;
+    font-weight: 700;
+    text-align: center;
+    white-space: nowrap;
+    border-radius: 0.4rem;
+    transition: all 0.3s ease;
+}
+
+.main-s1 .intro .selecao-btn button:hover,
+.main-s3 .ouro-fino button:hover,
+.servicos-s1 .ouro-fino button:hover,
+.servicos-s3 .seguro-viagem button:hover {
+    background-color: #00badf;
+    transform: scale(1.1);
+}
+
+.main-s1 .intro .selecao-btn button a,
+.main-s3 .ouro-fino button a,
+.servicos-s1 .ouro-fino button a,
+.servicos-s3 .seguro-viagem button a {
+    color: var(--white-color);
+}
+
+.produtos-s1 {
+    background: url(../img/ouro.png) no-repeat center center;
+    background-size: cover;
+    min-height: calc(100vh - var(--max-header-height));
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    position: relative;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.servicos-s1 {
+    background: url(../img/joias.png) no-repeat center center;
+    background-size: cover;
+    width: 100%;
+    max-height: calc(100vh - var(--max-header-height));
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    position: relative;
+    box-sizing: border-box;
+}
+
+/* SECTION 2 */
+
+#s2 {
+    position: relative;
+    flex-wrap: nowrap;
+    align-items: center;
+    grid-area: s2;
+    background-color: none;
+    min-height: calc(100vh - var(--max-header-height));
+    width: 100%;
+    text-align: center;
+}
+
+.main-s2 {
+    background: url(../img/ouro.png) no-repeat center center;
+    background-size: cover;
+    min-height: calc(100vh - var(--max-header-height));
+    display: flex;
+    position: relative;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    position: relative;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.produtos-s2 {
+    background: url(../img/moedas-estrangeiras.png) no-repeat center center;
+    background-size: cover;
+    max-height: calc(100vh - var(--max-header-height));
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    position: relative;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.servicos-s2 {
+    display: flex;
+    background-color: var(--secondary-color);
+    max-height: calc(100vh - var(--max-header-height));
+    position: relative;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+/* SECTION 3 */
+
+#s3 {
+    grid-area: s3;
+    position: relative;
+    background-color: none;
+    min-height: calc(100vh - var(--max-header-height));
+    width: 100%;
+    text-align: center;
+}
+
+.main-s3 {
+    background: url(../img/joias.png) no-repeat center center;
+    background-size: cover;
+    background-color: var(--secondary-color);
+    min-height: calc(100vh - var(--max-header-height));
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    position: relative;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.produtos-s3 {
+    background: url(../img/cartoes.png) no-repeat center center;
+    background-size: cover;
+    max-height: calc(100vh - var(--max-header-height));
+    display: flex;
+    background-color: var(--secondary-color);
+    position: relative;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.produtos-s3 .banner {
+    display: flex;
+    position: absolute;
+    top: 0; left: 0; right: 0; bottom: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.3);
+    z-index: 1;
+    backdrop-filter: blur(2px);
+}
+
+.servicos-s3 {
+    background: url(../img/mapa-mundi.jpg) no-repeat center center;
+    background-size: cover;
+    display: flex;
+    background-color: var(--terciary-color);
+    position: relative;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+/* SECTION 4 */
+
+#s4 {
+    grid-area: s4;
+    position: relative;
+    background-color: none;
+    min-height: calc(100vh - var(--max-header-height));
+    width: 100%;
+    text-align: center;
+}
+
+.main-s4 {
+    background: url(../img/moedas-estrangeiras.png) no-repeat center center;
+    background-size: cover;
+    max-height: calc(100vh - var(--max-header-height));
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    position: relative;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.main-s4 .banner {
+    display: flex;
+    position: absolute;
+    top: 0; left: 0; right: 0; bottom: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.3);
+    z-index: 1;
+    backdrop-filter: blur(2px);
+}
+
+/* SECTION 5 */
+
+#s5 {
+    grid-area: s5;
+    position: relative;
+    background-color: none;
+    min-height: calc(100vh - var(--max-header-height));
+    width: 100%;
+    text-align: center;
+}
+
+#s5 .localizacao {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    margin: 0.5rem;
+    gap: 2rem;
+}
+
+#s5 .localizacao .visite-agencia,
+#s5 .localizacao .local-descricao {
+    font-size: 2rem;
+    font-weight: 500;
+    margin: 1rem 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+#s5 .localizacao .visite-agencia {
+    font-size: 4rem;
+    margin: 1rem 0;
+    font-weight: 700;
+}
+
+#s5 .localizacao .local {
+    display: flex;
+    gap: 10rem;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    font-size: 2rem;
+    font-weight: 500;
+    margin-bottom: 2rem;
+}
+
+#s5 .localizacao .local figure {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+    margin-bottom: 2rem;
+    text-align: center;
+    font-size: 2rem;
+    font-weight: 500;
+}
+
+#s5 .localizacao .local figcaption h3 {
+    font-size: 2rem;
+    font-weight: 700;
+    margin: 0 0 2rem 0;
+    padding: 0;
+}
+
+#s5 .localizacao .local img {
+    border-radius: 0.8rem;
+    box-shadow: rgba(0, 0, 0, 0.3) 0px 19px 38px, rgba(0, 0, 0, 0.22) 0px 15px 12px;
+    max-width: 80rem;
+    max-height: 45rem;
+    width: auto;
+    height: auto;
+    margin-bottom: 1rem;
+}
+
+#s5 .localizacao .local .local-caption {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+}
+
+#s5 .localizacao .local .local-figure-2 {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+#s5 .localizacao .local .local-figure-2 img {
+    max-width: 56rem;
+    height: auto;
+    width: auto;
+}
+
+#s5 .localizacao .local figcaption.local-caption {
+    font-size: 1.6rem;
+    font-weight: 500;
+    margin-top: 1rem;
+}
+
+/* Hidden Elements */
+
+.produtos-s4 {
+    display: none;
+}
+
+.servicos-s4 {
+    display: none;
+}
+
+.banner {
+    display: flex;
+    position: absolute;
+    top: 0; left: 0; right: 0; bottom: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.3);
+    z-index: 1;
+    backdrop-filter: blur(2px);
+}
+
+/* FOOTER */
+
+.footer {
+    grid-area: footer;
+    display: flex;
+    background-color: var(--light-gray);
+    flex-direction: column;
+    text-align: left;
+    padding: 2.5rem 0;
+}
+
+.footer .footer-container {
+    display: flex;
+    padding: 2rem 4rem;
+    justify-content: space-around;
+    align-items: center;
+    min-height: 7.5rem;
+}
+
+.footer .footer-container .spotlight {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: flex-start;
+    max-width: 25%;
+    row-gap: 2.5rem;
+}
+
+.footer .footer-container .spotlight .spotlight-logo a img {
+    height: auto;
+    max-width: 100%;
+    border: none;
+    border-radius: 0;
+    box-shadow: none;
+    transition: all 0.3s ease-in-out;
+}
+
+.footer .footer-container .spotlight .spotlight-logo a img:hover {
+    transform: scale(1.1);
+}
+
+.footer .footer-container .spotlight .spotlight-text .slogan {
+    text-align: left;
+    font-size: 1.6rem;
+    font-weight: 500;
+}
+
+.footer .footer-container .spotlight .social ul {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    column-gap: 2.5rem;
+}
+
+.footer .footer-container .spotlight .social ul av {
+    transition: all 0.3s ease-in-out;
+}
+
+.footer .footer-container .spotlight .social ul a:hover{
+    color: var(--hover-btn);
+    transition: all 0.3s ease-in-out;
+}
+
+.footer .footer-container .spotlight .social ul .social-linkedin,
+.footer .footer-container .spotlight .social ul .social-twitter,
+.footer .footer-container .spotlight .social ul .social-tiktok,
+.footer .footer-container .spotlight .social ul .social-pinterest {
+    display: none;
+}
+
+.footer .footer-container .footer-nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 2.5rem;
+}
+
+.footer .footer-container .footer-nav li ul {
+    display: flex;
+    flex-direction: column;
+    row-gap: 1rem;
+}
+
+.footer .footer-container .footer-nav li ul h6 {
+    font-size: 2rem;
+    font-weight: 700;
+}
+
+.footer .footer-container .footer-nav li ul li {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 1.6rem;
+    font-weight: 600;
+}
+
+.footer .footer-container .footer-nav .produtos-e-servicos ul .taxas {
+    visibility: hidden;
+}
+
+.footer .footer-container .footer-nav .info-util {
+    display: none;
+}
+
+.footer .footer-container .footer-nav li .contate-nos {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: flex-start;
+}
+
+.footer .footer-container .footer-nav li .contate-nos ul .encontre-nos {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 2rem;
+    font-weight: 700;
+}
+
+.footer .footer-container .footer-nav li .contate-nos ul .encontre-nos p {
+    font-size: 2rem;
+    font-weight: 500;
+}
+
+.call-to-whatsapp {
+    position: fixed;
+    bottom: 2rem;
+    right: 2rem;
+    width: 10rem;
+    height: 10rem;
+    background-color: none;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+    transition: all 0.3s ease;
+}
+
+.call-to-whatsapp:hover {
+    transform: scale(1.1);
+}
+
+section[id] {
+    scroll-margin-top: 15.5rem;
+}

@@ -1,0 +1,7 @@
+User-agent: *
+Allow: /
+Disallow: /quem-somos.html
+Disallow: /faq.html
+Disallow: /fale-conosco.html
+Disallow: /parcerias.html
+Sitemap: https://www.aliancacambio.com.br/sitemap.xml
