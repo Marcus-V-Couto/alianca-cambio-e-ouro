@@ -1163,6 +1163,7 @@ body {
 }
 
 .footer .footer-container .spotlight {
+  order: 0;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -1190,9 +1191,9 @@ body {
   font-weight: 500;
 }
 
-/* .footer .footer-container .spotlight .social {
-    order: 1;
-} */
+.footer .footer-container .spotlight .social {
+  order: 1;
+}
 
 .footer .footer-container .spotlight .social ul {
   display: flex;
@@ -1219,7 +1220,7 @@ body {
 }
 
 .footer .footer-container .spotlight .spotlight-copyright {
-  /* order: 2; */
+  order: 2;
   text-align: left;
   font-size: 1.2rem;
   font-weight: 500;
