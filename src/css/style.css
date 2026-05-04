@@ -1218,7 +1218,7 @@ body {
   display: none;
 }
 
-.footer .footer-container .spotlight .spotlight-copyright .copyright {
+.footer .footer-container .spotlight .spotlight-copyright {
   /* order: 2; */
   text-align: left;
   font-size: 1.2rem;
