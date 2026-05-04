@@ -1062,6 +1062,10 @@ body {
     font-weight: 500;
 }
 
+/* .footer .footer-container .spotlight .social {
+    order: 1;
+} */
+
 .footer .footer-container .spotlight .social ul {
     display: flex;
     justify-content: space-between;
@@ -1069,8 +1073,9 @@ body {
     column-gap: 2.5rem;
 }
 
-.footer .footer-container .spotlight .social ul av {
+.footer .footer-container .spotlight .social ul a {
     transition: all 0.3s ease-in-out;
+    font-size: 2.4rem;
 }
 
 .footer .footer-container .spotlight .social ul a:hover{
@@ -1083,6 +1088,14 @@ body {
 .footer .footer-container .spotlight .social ul .social-tiktok,
 .footer .footer-container .spotlight .social ul .social-pinterest {
     display: none;
+}
+
+.footer .footer-container .spotlight .spotlight-copyright .copyright {
+    /* order: 2; */
+    text-align: left;
+    font-size: 1.2rem;
+    font-weight: 500;
+    margin-top: 1rem;
 }
 
 .footer .footer-container .footer-nav {
